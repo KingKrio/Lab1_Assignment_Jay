@@ -41,4 +41,15 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        // On collision with the player
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            // Make the coin disappear
+            other.gameObject.SetActive(false);
+        }
+
+    }
+
 }
